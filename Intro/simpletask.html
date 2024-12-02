@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en" class="h-full">
+  <head>
+    <title>Vue App</title>
+    <script src="https://unpkg.com/vue@3"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      
+    </style>
+  </head >
+  <body class="h-full grid place-items-center">
+    <div id="app">
+        <section>  <h2 class="font-bold mb-2">In Progess</h2>
+            <ul>
+                
+                <li v-for="assigment in assigments.filter(a => !a.completed)"> <label >{{assigment.name}}  <input type="checkbox" v-model="assigment.completed"> </label> </li>
+            </ul>
+        </section>
+        <section class="mt-8">  <h2 class="font-bold mb-2"> Completed</h2>
+            <ul>
+                
+                <li v-for="assigment in assigments.filter(a => a.completed)"> <label >{{assigment.name}}  <input type="checkbox" v-model="assigment.completed"> </label> </label> </li>
+            </ul>
+        </section>
+        <!-- <pre>
+            {{assigments}}
+        </pre> -->
+    </div>
+      
+  </body>
+  <script>
+    Vue.createApp(
+       {
+        data() {
+            return {
+                assigments : [
+                    {id: 1 ,name: 'Complete Math Homework' , completed :false},
+                    {id: 2 , name: 'Write a 500-word' , completed :false},
+                    {id: 3  ,name: 'Read Chapter 5' , completed :false}
+                ]
+            }
+        }
+       }
+    ).mount("#app");
+  </script>
+</html>
