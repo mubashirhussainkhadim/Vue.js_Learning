@@ -10,16 +10,16 @@
   </head >
   <body class="h-full grid place-items-center">
     <div id="app">
-        <section>  <h2 class="font-bold mb-2">In Progess</h2>
+        <section v-if="InprogressAssigments.length">  <h2 class="font-bold mb-2">In Progess</h2>
             <ul>
                 
-                <li v-for="assigment in assigments.filter(a => !a.completed)"> <label >{{assigment.name}}  <input type="checkbox" v-model="assigment.completed"> </label> </li>
+                <li v-for="assigment in InprogressAssigments" :key="assigment.id"> <label >{{assigment.name}}  <input type="checkbox" v-model="assigment.completed"> </label> </li>
             </ul>
         </section>
-        <section class="mt-8">  <h2 class="font-bold mb-2"> Completed</h2>
+        <section v-if="completedAssigments.length" class="mt-8">  <h2 class="font-bold mb-2"> Completed</h2>
             <ul>
                 
-                <li v-for="assigment in assigments.filter(a => a.completed)"> <label >{{assigment.name}}  <input type="checkbox" v-model="assigment.completed"> </label> </label> </li>
+                <li v-for="assigment in assigments.filter(a => a.completed)" :key="assigment.id"> <label >{{assigment.name}}  <input type="checkbox" v-model="assigment.completed"> </label> </label> </li>
             </ul>
         </section>
         <!-- <pre>
@@ -38,6 +38,14 @@
                     {id: 2 , name: 'Write a 500-word' , completed :false},
                     {id: 3  ,name: 'Read Chapter 5' , completed :false}
                 ]
+            }
+        },
+        computed: {
+            completedAssigments () {
+                return this.assigments.filter(assigments=>assigments.completed)
+            },
+            InprogressAssigments () {
+                return this.assigments.filter(assigments=> !assigments.completed)
             }
         }
        }
