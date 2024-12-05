@@ -29,36 +29,6 @@
             "complete": false,
             "id": 5,
             "tag": "development"
-        },
-        {
-            "name": "Write unit tests for backend",
-            "complete": false,
-            "id": 6,
-            "tag": "testing"
-        },
-        {
-            "name": "Perform integration testing",
-            "complete": false,
-            "id": 7,
-            "tag": "testing"
-        },
-        {
-            "name": "Fix bugs from code review",
-            "complete": false,
-            "id": 8,
-            "tag": "development"
-        },
-        {
-            "name": "Prepare deployment scripts",
-            "complete": false,
-            "id": 9,
-            "tag": "deployment"
-        },
-        {
-            "name": "Deploy to production",
-            "complete": false,
-            "id": 10,
-            "tag": "deployment"
         }
     ]
 }

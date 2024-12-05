@@ -2,9 +2,9 @@
   "name": "vue",
   "version": "1.0.0",
   "description": "This repository provides a structured guide to mastering Vue 3, starting from the basics and progressing to advanced concepts.",
-  "main": "index.js",
+  "main": "index.html",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "npx serve & npx json-server db.json -p 3001"
   },
   "keywords": [],
   "author": "",
